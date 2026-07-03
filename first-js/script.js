@@ -134,3 +134,87 @@ for(let i=0;i<arr1.length;i++){
     sum3+=arr1[i]
 }
 console.log(sum3)
+//functions
+//function definition
+function greet(){
+    console.log("hello all")
+}
+//function call
+greet()
+greet()
+function addNumbers(num1,num2){
+    return num1+num2
+}
+let output=addNumbers(333,444)
+console.log(`sum of 333 and 444 is ${output}`)
+
+//write a function to check if the passed in value is even and return the boolean
+function isEven(num) {
+    if (num % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isEven(8));  
+console.log(isEven(5));  
+//create a simple intereset calcualtor using arrow function syntax -principal,rate,time. return simplae iinterest and console.
+const simpleInterest = (principal, rate, time) => {
+    return (principal * rate * time) / 100;
+}
+
+console.log("simple interest:" ,simpleInterest(10000, 5, 2));
+
+//foreach
+let numbers=[1,2,3,4,5,6,7,8,9]
+//numbers.forEach((item,index,arr)=>{
+   // console.log(item)//just 1 to 9 printed
+    //console.log(index)//all items come with their indexes (1:0,2:1 etc)
+   // console.log(arr)//print array
+    
+//})
+numbers.forEach((item,index)=>{
+    numbers[index]=item+2
+})
+console.log(numbers)
+
+let prices=[30,40,50,777,200]
+//filter-returns a new array matching the condition
+let prices_greater_than_100=prices.filter((item)=>{
+    return item>100
+})
+console.log(prices_greater_than_100)
+
+//filter out even nos from prices array
+let even_from_array=prices.filter((item)=>{
+    return item%2==0
+})
+console.log(even_from_array)
+//map function-creates a new arrsy by applying a function to each element of original array
+const simple_nums=[1,2,3,4]
+const double_nums=simple_nums.map((item)=>{
+    return item*2
+})
+console.log(double_nums)
+const fruits = ['apple','banana','cherry']
+
+const upperFruits = fruits.map(item => item.toUpperCase());
+
+console.log(upperFruits);
+
+//extract specific values from array of objects
+//extract specific values from array
+const items=[
+    {name:"bike",price:50000},
+    {name:"TV",price:30000},
+    {name:"Phone",price:25000},
+]
+//use map function to get an array of item names
+const itemName = items.map(item => item.name);
+
+const result = items
+    .filter(item => item.price > 30000)
+    .map(item => item.name)
+
+console.log(result)
